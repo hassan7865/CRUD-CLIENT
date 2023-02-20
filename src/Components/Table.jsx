@@ -88,7 +88,8 @@ const Table = () => {
     const [user,setuser] = useState([])
 
     const handleClick = async(id)=>{
-        await Req.put(`/users/${id}`)
+        const res =await Req.put(`/users/${id}`)
+        res.status === 200 && window.location.reload()
 
     }
     useEffect(()=>{
